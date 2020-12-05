@@ -5,6 +5,7 @@ const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { createProxyMiddleware } = require("http-proxy-middleware");
+const apiMocker = require("connect-api-mocker");
 require("dotenv").config();
 
 const INPUT_PATH = path.resolve(__dirname, "src/index.tsx");
@@ -57,7 +58,10 @@ const config = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: [["autoprefixer"]],
+                                plugins: {
+                                    tailwindcss: {},
+                                    autoprefixer: {},
+                                },
                             },
                         },
                     },
@@ -73,7 +77,10 @@ const config = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: [["autoprefixer"]],
+                                plugins: {
+                                    tailwindcss: {},
+                                    autoprefixer: {},
+                                },
                             },
                         },
                     },

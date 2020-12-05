@@ -7,12 +7,7 @@
     "globals": {
         "JSX": "readonly"
     },
-    "plugins": [
-        "@typescript-eslint",
-        "react",
-        "react-hooks",
-        "import"
-    ],
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "import"],
     "extends": [
         "plugin:@typescript-eslint/recommended",
         "prettier/@typescript-eslint",
@@ -38,18 +33,12 @@
         "function-paren-newline": 0,
         "no-extra-semi": 0,
         "class-methods-use-this": 0,
-        "semi": [
-            2,
-            "always"
-        ],
+        "semi": [2, "always"],
         "no-multiple-empty-lines": 2,
         "no-console": [
             2,
             {
-                "allow": [
-                    "warn",
-                    "error"
-                ]
+                "allow": ["warn", "error"]
             }
         ],
         "no-debugger": 2,
@@ -63,18 +52,9 @@
             }
         ],
         "prefer-object-spread": 2,
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "max-classes-per-file": [
-            2,
-            1
-        ],
-        "max-lines": [
-            2,
-            500
-        ],
+        "linebreak-style": [2, "unix"],
+        "max-classes-per-file": [2, 1],
+        "max-lines": [2, 500],
         "quotes": [
             2,
             "double",
@@ -91,9 +71,7 @@
         ],
         "padded-blocks": 2,
         // typescript
-        "@typescript-eslint/no-shadow": [
-            "error"
-        ],
+        "@typescript-eslint/no-shadow": ["error"],
         "@typescript-eslint/no-unused-vars": 1,
         "@typescript-eslint/camelcase": 0,
         "@typescript-eslint/no-explicit-any": 0,
@@ -104,30 +82,18 @@
             2,
             {
                 "selector": "interface",
-                "format": [
-                    "PascalCase"
-                ],
-                "prefix": [
-                    "I"
-                ]
+                "format": ["PascalCase"],
+                "prefix": ["I"]
             },
             {
                 "selector": "typeAlias",
-                "format": [
-                    "PascalCase"
-                ],
-                "prefix": [
-                    "T"
-                ]
+                "format": ["PascalCase"],
+                "prefix": ["T"]
             },
             {
                 "selector": "typeParameter",
-                "format": [
-                    "PascalCase"
-                ],
-                "prefix": [
-                    "T"
-                ]
+                "format": ["PascalCase"],
+                "prefix": ["T"]
             }
         ],
         "@typescript-eslint/member-ordering": 2,
@@ -157,14 +123,8 @@
         "import/order": 2,
         "import/newline-after-import": 2,
         // react
-        "react/jsx-indent": [
-            2,
-            4
-        ],
-        "react/jsx-indent-props": [
-            2,
-            4
-        ],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
         "react/require-default-props": 0,
         "react/default-props-match-prop-types": 0,
         "react/jsx-uses-react": 1,
@@ -179,21 +139,17 @@
         "react/forbid-prop-types": [
             2,
             {
-                "forbid": [
-                    "any"
-                ]
+                "forbid": ["any"]
             }
         ],
         "react/jsx-filename-extension": [
             1,
             {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         ]
+    },
+    "prettier/prettier": {
+        "endOfLine": "auto"
     }
 }

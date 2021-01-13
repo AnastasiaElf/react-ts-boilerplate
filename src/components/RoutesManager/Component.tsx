@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Routes } from "../../constants/routes";
 import { UserRoles } from "../../types/main";
+import AppLayout from "../AppLayout";
 import "./styles.scss";
 
 interface IRoutesManagerProps {
@@ -15,7 +16,14 @@ const RoutesManager: React.FC<IRoutesManagerProps> = () => {
 
     const renderRoute = useCallback((data) => {
         const { authorizationRequired, component: Component } = data;
-        // TODO: add AppLayout
+
+        if (authorizationRequired) {
+            return (
+                <AppLayout>
+                    <Component />
+                </AppLayout>
+            );
+        }
         return <Component />;
     }, []);
 
@@ -25,8 +33,10 @@ const RoutesManager: React.FC<IRoutesManagerProps> = () => {
                 {Object.keys(Routes).map((key) => {
                     const data = Routes[key];
                     const { authorizationRequired, roles, url } = data;
+
                     if (
                         authorizationRequired === undefined ||
+                        (authorizationRequired === false && !isAuthorized) ||
                         (authorizationRequired && isAuthorized && (!roles || (roles && roles.includes(userRole))))
                     ) {
                         return <Route key={key} path={url} exact render={() => renderRoute(data)} />;

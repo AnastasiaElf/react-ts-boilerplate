@@ -59,7 +59,6 @@ const config = {
                         options: {
                             postcssOptions: {
                                 plugins: {
-                                    tailwindcss: {},
                                     autoprefixer: {},
                                 },
                             },
@@ -78,7 +77,6 @@ const config = {
                         options: {
                             postcssOptions: {
                                 plugins: {
-                                    tailwindcss: {},
                                     autoprefixer: {},
                                 },
                             },

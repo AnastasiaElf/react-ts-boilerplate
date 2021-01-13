@@ -52,7 +52,7 @@
             }
         ],
         "prefer-object-spread": 2,
-        "linebreak-style": [2, "unix"],
+        "linebreak-style": 0,
         "max-classes-per-file": [2, 1],
         "max-lines": [2, 500],
         "quotes": [
@@ -147,9 +147,8 @@
             {
                 "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
-        ]
-    },
-    "prettier/prettier": {
-        "endOfLine": "auto"
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
     }
 }

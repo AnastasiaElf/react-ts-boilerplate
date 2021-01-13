@@ -4,12 +4,7 @@ import "./styles.scss";
 import { RootStore } from "../../stores/RootStore";
 import RoutesManager from "../RoutesManager";
 
-interface IAppProps {
-    store?: RootStore;
-    children?: any;
-}
-
-const App: React.FC<IAppProps> = () => (
+const App: React.FC = () => (
     <div className="app">
         <RoutesManager />
         {/* TODO: Request Status (fetching, error, success) */}

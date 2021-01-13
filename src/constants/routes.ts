@@ -1,4 +1,4 @@
-import TestComponent from "../components/TestComponent/Component";
+import TestComponent from "../components/TestComponent";
 import { UserRoles } from "../types/main";
 
 export const Routes = {

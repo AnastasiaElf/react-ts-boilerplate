@@ -1,18 +1,17 @@
 import React, { useCallback } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Routes } from "../../constants/routes";
-import { UserRoles } from "../../types/main";
 import AppLayout from "../AppLayout";
 import "./styles.scss";
+import { TInjectedProps } from ".";
 
-interface IRoutesManagerProps {
+export interface IRoutesManagerProps {
     children?: any;
 }
+type TRoutesManagerProps = TInjectedProps & IRoutesManagerProps;
 
-const RoutesManager: React.FC<IRoutesManagerProps> = () => {
-    // TODO: remove hardcoded values
-    const isAuthorized = true;
-    const userRole = UserRoles.User;
+const RoutesManager: React.FC<TRoutesManagerProps> = (props) => {
+    const { isAuthorized, userRole } = props;
 
     const renderRoute = useCallback((data) => {
         const { authorizationRequired, component: Component } = data;
@@ -43,8 +42,8 @@ const RoutesManager: React.FC<IRoutesManagerProps> = () => {
                     }
                     return null;
                 })}
-                {/* Add page not found */}
-                {/* Add redirect from home to "/" empty route */}
+                {/* TODO: Add page not found */}
+                {/* TODO: Add redirect from home to "/" empty route */}
             </Switch>
         </div>
     );

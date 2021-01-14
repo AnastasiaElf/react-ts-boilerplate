@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles.scss";
 
-import { RootStore } from "../../stores/RootStore";
 import RoutesManager from "../RoutesManager";
 
 const App: React.FC = () => (
@@ -11,9 +10,5 @@ const App: React.FC = () => (
         {/* TODO: Modals dialogs */}
     </div>
 );
-
-App.defaultProps = {
-    store: {} as RootStore,
-};
 
 export default App;

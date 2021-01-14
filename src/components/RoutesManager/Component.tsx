@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { Switch, Route } from "react-router-dom";
 import { Routes } from "../../constants/routes";
 import AppLayout from "../AppLayout";
+import PageNotFound from "../PageNotFound";
 import "./styles.scss";
 import { TInjectedProps } from ".";
 
@@ -42,8 +43,7 @@ const RoutesManager: React.FC<TRoutesManagerProps> = (props) => {
                     }
                     return null;
                 })}
-                {/* TODO: Add page not found */}
-                {/* TODO: Add redirect from home to "/" empty route */}
+                <Route component={PageNotFound} />
             </Switch>
         </div>
     );
